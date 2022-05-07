@@ -1,0 +1,4 @@
+Vector for macOS
+
+Welcome to Vector library for macOS! This installer will guide you through the installation process.
+
