@@ -110,8 +110,8 @@ Vector& Vector::operator/=(const double scalar) {
   return *this;
 }
 
-/* *** *** *** *** *** *** *** Deconstructor *** *** *** *** *** *** *** */
-Vector::~Vector() {}
+/* *** *** *** *** *** *** *** Destructor *** *** *** *** *** *** *** */
+Vector::~Vector() { delete[] values_; }
 
 /* *** *** *** *** *** *** *** Friend Functions *** *** *** *** *** *** *** */
 /* *** *** *** swap() *** *** *** */
