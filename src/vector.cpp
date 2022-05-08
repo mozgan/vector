@@ -80,7 +80,7 @@ Vector Vector::operator-() const noexcept {
 /* *** *** *** operator+=: vector addition and assignment *** *** *** */
 Vector& Vector::operator+=(const Vector& rhs) {
   if (size() != rhs.size())
-    throw invalid_argument("Vector::operator+=: Missmatch array dimensions");
+    throw logic_error("Vector::operator+=: Missmatch array dimensions");
 
   for (size_t i = 0; i < size_; ++i) values_[i] += rhs[i];
   return *this;
@@ -89,7 +89,7 @@ Vector& Vector::operator+=(const Vector& rhs) {
 /* *** *** *** operator-=: vector subtraction and assignment *** *** *** */
 Vector& Vector::operator-=(const Vector& rhs) {
   if (size() != rhs.size())
-    throw invalid_argument("Vector::operator-=: Missmatch array dimensions");
+    throw logic_error("Vector::operator-=: Missmatch array dimensions");
 
   for (size_t i = 0; i < size_; ++i) values_[i] -= rhs[i];
   return *this;
@@ -134,7 +134,7 @@ const size_t Vector::size() const noexcept { return size_; }
 /* *** *** *** operator+ *** *** *** */
 Vector operator+(const Vector& v, const Vector& u) {
   if (v.size() != u.size())
-    throw invalid_argument("operator+: Missmatch array dimensions.");
+    throw logic_error("operator+: Missmatch array dimensions.");
 
   Vector result(v);
   return (result += u);
@@ -143,7 +143,7 @@ Vector operator+(const Vector& v, const Vector& u) {
 /* *** *** *** operator- *** *** *** */
 Vector operator-(const Vector& v, const Vector& u) {
   if (v.size() != u.size())
-    throw invalid_argument("operator-: Missmatch array dimensions.");
+    throw logic_error("operator-: Missmatch array dimensions.");
 
   Vector result(v);
   return (result -= u);
@@ -181,7 +181,7 @@ const bool operator!=(const Vector& lhs, const Vector& rhs) {
 /* *** *** *** dot() (dot product (aka. inner product)) *** *** *** */
 const double dot(const Vector& v, const Vector& u) {
   if (v.size() != u.size())
-    throw invalid_argument("dot(): Missmatch array dimensions.");
+    throw logic_error("dot(): Missmatch array dimensions.");
 
   double acc{0};
   for (size_t i = 0; i < v.size(); ++i) acc += (v[i] * u[i]);

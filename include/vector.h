@@ -110,7 +110,7 @@ class Vector {
    *
    * @return The accumulated Vector.
    *
-   * @throws invalid_argument
+   * @throws logic_error
    *
    * Usage: v +=u. The summation of vectors v and u assigned to v.
    */
@@ -123,7 +123,7 @@ class Vector {
    *
    * @return The subtracted Vector.
    *
-   * @throws invalid_argument
+   * @throws logic_error
    *
    * Usage: v -= u. The subtraction of u from v assigned to v.
    *
@@ -211,13 +211,12 @@ class Vector {
  *
  * @return The summation of two vectors.
  *
- * @throws invalid_argument
+ * @throws logic_error
  *
  * Usage: m = u + v. The summation of u and v assigned to m.
  */
 Vector operator+(const Vector& v, const Vector& u);
 
-// operator-: vector subtraction
 /**
  * @brief Subtraction operator - overloading.
  *
@@ -226,7 +225,7 @@ Vector operator+(const Vector& v, const Vector& u);
  *
  * @return The subtraction of two vectors.
  *
- * @throws invalid_argument
+ * @throws logic_error
  *
  * Usage: m = u - v. The subtraction v from u assigned to m.
  */
@@ -290,7 +289,7 @@ const bool operator!=(const Vector& lhs, const Vector& rhs);
  *
  * @return doube Dot production of two vectors.
  *
- * @throws invalid_argument
+ * @throws logic_error
  *
  * Usage: dot(u, v) gives the inner product of u and v.
  */

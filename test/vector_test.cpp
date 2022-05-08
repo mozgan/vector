@@ -141,13 +141,13 @@ TEST(vector_test, vector_addition) {
 
   // exceptions
   Vector k(2 * n);
-  EXPECT_THROW(k += v, invalid_argument);
+  EXPECT_THROW(k += v, logic_error);
 
   Vector z;
-  EXPECT_THROW(z = k + v, invalid_argument);
+  EXPECT_THROW(z = k + v, logic_error);
 }
 
-TEST(vector_test, vector_substraction) {
+TEST(vector_test, vector_subtraction) {
   const size_t n{20};
   double arr[n];
   fill_array(arr, n, 50, 100);
@@ -165,10 +165,10 @@ TEST(vector_test, vector_substraction) {
 
   // exceptions
   Vector k(2 * n);
-  EXPECT_THROW(k -= v, invalid_argument);
+  EXPECT_THROW(k -= v, logic_error);
 
   Vector z;
-  EXPECT_THROW(z = k - v, invalid_argument);
+  EXPECT_THROW(z = k - v, logic_error);
 }
 
 TEST(vector_test, scalar_multiplication) {
@@ -345,7 +345,7 @@ TEST(vector_test, orthogonality) {
   EXPECT_FALSE(orthogonal(u, v));
 
   Vector m{v.size() * 2};
-  EXPECT_THROW(orthogonal(m, v), invalid_argument);
+  EXPECT_THROW(orthogonal(m, v), logic_error);
 }
 
 TEST(vector_test, angle_of_two_vectors) {
